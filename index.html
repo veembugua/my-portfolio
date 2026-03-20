@@ -875,62 +875,6 @@
       }
 
       /* ============================================
-           TESTIMONIALS SECTION
-           ============================================ */
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: var(--spacing-2xl);
-      }
-
-      .testimonial-card {
-        background-color: var(--color-bg-secondary);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-2xl);
-        transition: all var(--transition-normal);
-        position: relative;
-      }
-
-      .testimonial-card::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: var(--spacing-lg);
-        font-size: 4rem;
-        color: var(--color-accent);
-        opacity: 0.2;
-        font-family: var(--font-family-display);
-      }
-
-      .testimonial-card:hover {
-        border-color: var(--color-accent);
-        background-color: var(--color-bg-tertiary);
-        transform: translateY(-4px);
-      }
-
-      .testimonial-text {
-        margin-bottom: var(--spacing-lg);
-        line-height: 1.8;
-        color: var(--color-text-secondary);
-        font-style: italic;
-      }
-
-      .testimonial-author {
-        font-weight: 700;
-        color: var(--color-accent);
-        font-family: var(--font-family-display);
-      }
-
-      .testimonial-role {
-        font-size: var(--font-size-sm);
-        color: var(--color-text-tertiary);
-        font-family: var(--font-family-code);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      /* ============================================
            CONTACT SECTION
            ============================================ */
       .contact-grid {
@@ -1253,6 +1197,55 @@
           margin-bottom: var(--spacing-2xl);
         }
       }
+
+      /* ============================================
+            MTOTOCARE PHONE SCROLL VIEW
+         ============================================ */
+      .screenshot-vault {
+        width: 280px;
+        height: 500px;
+        overflow-y: scroll;
+        /* Using your variable for the border color */
+        border: 10px solid var(--color-bg-tertiary); 
+        border-radius: 30px;
+        margin: var(--spacing-lg) auto;
+        background: #000;
+        scroll-behavior: smooth;
+        position: relative;
+        box-shadow: var(--shadow-lg);
+        
+        /* The Fade Effect - makes images disappear smoothly at edges */
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 8%, black 92%, transparent);
+        mask-image: linear-gradient(to bottom, transparent, black 8%, black 92%, transparent);
+      }
+
+      /* Hide the scrollbar for a cleaner "App" look */
+      .screenshot-vault::-webkit-scrollbar {
+        display: none;
+      }
+
+      .screenshot-vault img {
+        width: 100%;
+        display: block;
+        /* Subtle divider between screens */
+        border-bottom: 2px solid var(--color-bg-secondary); 
+      }
+
+      .scroll-hint {
+        text-align: center;
+        font-family: var(--font-family-code);
+        font-size: var(--font-size-xs);
+        color: var(--color-text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: var(--spacing-md);
+      }
+
+      /* Adjusting your existing project-links to handle the new buttons */
+      .project-links .screenshot-btn {
+        color: var(--color-accent) !important;
+        border-color: var(--color-accent) !important;
+      }
     </style>
   </head>
   <body>
@@ -1427,37 +1420,41 @@
          
           <!-- Project 1 -->
           <div class="project-card">
-            <div class="project-img-wrapper">
-              <img
-                class="project-image"
-                src="mtotocare-screenshot.png"
-                alt="MtotoCare App screenshot"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              />
-              <div class="project-image-fallback">MtotoCare App</div>
-            </div>
-            <div class="project-header">
-              <h3>MtotoCare App</h3>
-            </div>
-            <div class="project-description">
-              <p>
-                Mobile health records application built to digitize infant
-                vaccination and growth tracking for parents and healthcare
-                providers in Kenya.
-              </p>
+            <div class="screenshot-vault">
+            <img src="images/mtotocare-preview.jpg (1).jpeg" alt="Health Worker Signup">
+            <img src="images/mtotocare-preview.jpg (2).jpeg" alt="Parent Signup">
+            <img src="images/mtotocare-preview.jpg (3).jpeg" alt="Parent Login">
+            <img src="images/mtotocare-preview.jpg (4).jpeg" alt="Health Worker Login">
+            <img src="images/mtotocare-preview.jpg (5).jpeg" alt="Health Worker Dashboard">
+            <img src="images/mtotocare-preview.jpg (6).jpeg" alt="Health Worker Setting & Logout">
+            <img src="images/mtotocare-preview.jpg (7).jpeg" alt="Parent Dashboard">
+            <img src="images/mtotocare-preview.jpg (8).jpeg" alt="Parent Logout">
+          </div>
+  
+  <p class="scroll-hint">↑ Scroll phone to view app flow ↑</p>
+
+  <div class="project-header">
+    <h3>MtotoCare App</h3>
+  </div>
+
+  <div class="project-description">
+    <p>
+      Mobile health records application built to digitize infant
+      vaccination and growth tracking for parents and healthcare
+      providers in Kenya.
+    </p>
     <div class="project-tech">
       <span class="tech-tag">Flutter</span>
       <span class="tech-tag">Firebase</span>
       <span class="tech-tag">Dart</span>
     </div>
   </div>
+
   <div class="project-links">
     <a href="https://github.com/veembugua/mtotocare_app" target="_blank">GitHub Repo</a>
-    
     <span class="separator">|</span>
-
     <a href="images/mtotocare-preview.jpg (1).jpeg" target="_blank" class="screenshot-btn">
-      View UI Demo
+      Expand View
     </a>
   </div>
 </div>
@@ -1494,7 +1491,7 @@
         <span class="separator">|</span>
 
         <a href="images/nchilocator-UI.PNG.png" target="_blank" class="screenshot-btn">
-            View Screenshot
+            View UI Demo
         </a>
     </div>
 </div>
