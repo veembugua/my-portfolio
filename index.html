@@ -671,6 +671,40 @@
         box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
       }
 
+      .project-img-wrapper {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform var(--transition-normal);
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.05);
+      }
+
+      .project-image-fallback {
+        display: none;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #2d2d2d, #0f0f0f);
+        color: #ffffff;
+        font-weight: 700;
+        text-align: center;
+        padding: var(--spacing-lg);
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+
       .project-header {
         padding: var(--spacing-2xl);
         background: linear-gradient(
@@ -1390,8 +1424,18 @@
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
+         
           <!-- Project 1 -->
           <div class="project-card">
+            <div class="project-img-wrapper">
+              <img
+                class="project-image"
+                src="mtotocare-screenshot.png"
+                alt="MtotoCare App screenshot"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="project-image-fallback">MtotoCare App</div>
+            </div>
             <div class="project-header">
               <h3>MtotoCare App</h3>
             </div>
@@ -1399,39 +1443,44 @@
               <p>
                 Mobile health records application built to digitize infant
                 vaccination and growth tracking for parents and healthcare
-                providers.
+                providers in Kenya.
               </p>
-              <div class="project-tech">
-                <span class="tech-tag">Flutter</span>
-                <span class="tech-tag">Firebase</span>
-                <span class="tech-tag">Dart</span>
-              </div>
-            </div>
-            <div class="project-links">
-             <a
-                href="https://github.com/veembugua/mtotocare_app"
-                target="_blank"
-                >GitHub</a
-              > 
-              <a
-                href="https://github.com/veembugua/mtotocare_app"
-                target="_blank"
-                >GitHub</a
-              >
-            </div>
-          </div>
+    <div class="project-tech">
+      <span class="tech-tag">Flutter</span>
+      <span class="tech-tag">Firebase</span>
+      <span class="tech-tag">Dart</span>
+    </div>
+  </div>
+  <div class="project-links">
+    <a href="https://github.com/veembugua/mtotocare_app" target="_blank">GitHub Repo</a>
+    
+    <span class="separator">|</span>
 
+    <a href="images/mtotocare-dashboard.jpg" target="_blank" class="screenshot-btn">
+      View UI Demo
+    </a>
+  </div>
+</div>
           
           <!-- Project 2 -->
           <div class="project-card">
-    <div class="project-header">
-        <h3>NchiLocator</h3>
-    </div>
-    <div class="project-description">
-        <p>
-            Geographic placement tool for East Africa using UTM coordinates 
-            and local mapping data to improve location accuracy.
-        </p>
+            <div class="project-img-wrapper">
+              <img
+                class="project-image"
+                src="nchilocator-screenshot.png"
+                alt="NchiLocator screenshot"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="project-image-fallback">NchiLocator</div>
+            </div>
+            <div class="project-header">
+              <h3>NchiLocator</h3>
+            </div>
+            <div class="project-description">
+              <p>
+                Geographic placement tool for East Africa using UTM coordinates
+                and local mapping data to improve location accuracy.
+              </p>
         <div class="project-tech">
             <span class="tech-tag">HTML</span>
             <span class="tech-tag">CSS</span>
@@ -1444,7 +1493,7 @@
         
         <span class="separator">|</span>
 
-        <a href="images/nchilocator-UI.png" target="_blank" class="screenshot-btn">
+        <a href="images/nchilocator-UI..PNG.png" target="_blank" class="screenshot-btn">
             View Screenshot
         </a>
     </div>
@@ -1560,11 +1609,6 @@
             <h4>Resources</h4>
             <ul>
               <li><a href="#projects">View My Work</a></li>
-              <li>
-                <a href="VivianmbuguaCV.pdf" download="VivianmbuguaCV.pdf"
-                  >↓ Download CV</a
-                >
-              </li>
               <li><a href="#">Blog Posts</a></li>
             </ul>
           </div>
