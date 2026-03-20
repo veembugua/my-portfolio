@@ -735,7 +735,11 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
         transition: all var(--transition-fast);
-      }
+        color: #007bff !important; /* Forces the link to be blue */
+        display: inline-block !important; /* Ensures it isn't hidden */
+        visibility: visible !important;
+    }
+      
 
       .project-links a:first-child {
         color: var(--color-accent);
